@@ -3,21 +3,20 @@ import { NgModule } from '@angular/core';
 import { HttpModule} from '@angular/http';
 import { AppRoutingModule }  from './app-routing.module';
 
-import {FormsModule, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
+import {User} from './user'
 
+import { SigninService } from './signin/signin.service';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
-    FormBuilder,
-    FormGroup,
-    Validators,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   declarations: [
@@ -26,7 +25,7 @@ import { SigninComponent } from './signin/signin.component';
     SigninComponent
 
   ],
-  providers: [],
+  providers: [SigninService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
