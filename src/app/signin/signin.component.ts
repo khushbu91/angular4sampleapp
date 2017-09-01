@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormsModule,FormBuilder, FormGroup, Validators} from '@angular/forms';
-
+import {SigninService} from './signin.service';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -12,7 +12,7 @@ export class SigninComponent implements OnInit {
 	email: string ='';
 	password:string ='';
 
-  	constructor(private fb: FormBuilder) { 
+  	constructor(private fb: FormBuilder,private service:SigninService) {
   		this.rForm = fb.group({
   			'email' :[null,Validators.required],
   			'password' :[null,Validators.compose([Validators.required, Validators.minLength(30)])]
@@ -21,11 +21,12 @@ export class SigninComponent implements OnInit {
   	}
 
   	ngOnInit() {
+  			
   	}
   	addPost(post){
   		this.email = post.email;
   		this.password = post.password;
-  		console.log(post);
+      this.service.checkUserExistence(post);
   	}
 
 }

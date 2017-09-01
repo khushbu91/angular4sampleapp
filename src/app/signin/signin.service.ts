@@ -1,16 +1,25 @@
 import { Injectable } from '@angular/core';
 import {User} from "./../user"
 
+@Injectable()
+
 export class SigninService{
-	
-	existingUsers: User[] =[];
-	setUserData(user){
-		var existingUsers = this.getUserData();
-		if(existingUsers){
-			existingUsers = JSON.parse(existingUsers);
+	existingUsers: User[] = [];
+
+	checkUserExistence(user){
+		var data = this.getUserData();
+		if(data){
+			this.existingUsers = JSON.parse(data);
+			for(var i=0;i<this.existingUsers.length;i++){
+				if(this.existingUsers[i].email == user.email && this.existingUsers[i].password == user.password){
+					console.log("success");
+				}else{
+					console.log("Doesn't Exist");
+				}
+			}
 		}
-		existingUsers.push(user);
 	}
+	
 	getUserData(){
 		 return localStorage.getItem('users');
 	}
