@@ -6,6 +6,7 @@ import {ShoppingItem} from './../shoppingItem';
  	savedItems : ShoppingItem[]=[];
  	setItems(item){
  		var data = this.getItems();
+ 		data = !!data ? data : this.savedItems;
  		data.push(item);
  		localStorage.setItem("shoppingList",JSON.stringify(data));
 
