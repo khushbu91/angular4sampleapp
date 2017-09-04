@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormsModule,FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormsModule,FormBuilder, FormGroup, Validators,FormControl} from '@angular/forms';
 import {SignupService} from './signup.service';
 @Component({
   selector: 'app-signup',
@@ -7,15 +7,14 @@ import {SignupService} from './signup.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-	rForm : FormGroup;
+	signupForm : FormGroup;
 	post :any;
 	email: string ='';
 	password:string ='';
-
   	constructor(private fb: FormBuilder,private service:SignupService) { 
-  		this.rForm = fb.group({
-  			'email' :[null,Validators.required],
-  			'password' :[null,Validators.compose([Validators.required, Validators.minLength(30)])]
+  		this.signupForm = fb.group({
+  			'email' :[null,Validators.compose([Validators.required,Validators.email])],
+  			'password' :[null,Validators.compose([Validators.required, Validators.minLength(7)])]
   		})
 
   	}

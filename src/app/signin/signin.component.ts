@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormsModule,FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import {SigninService} from './signin.service';
 @Component({
   selector: 'app-signin',
@@ -12,7 +13,7 @@ export class SigninComponent implements OnInit {
 	email: string ='';
 	password:string ='';
 
-  	constructor(private fb: FormBuilder,private service:SigninService) {
+  	constructor(private fb: FormBuilder,private service:SigninService, private router : Router) {
   		this.rForm = fb.group({
   			'email' :[null,Validators.required],
   			'password' :[null,Validators.compose([Validators.required, Validators.minLength(30)])]
@@ -24,9 +25,12 @@ export class SigninComponent implements OnInit {
   			
   	}
   	addPost(post){
-  		this.email = post.email;
-  		this.password = post.password;
-      this.service.checkUserExistence(post);
+      var logInStatus = this.service.checkUserExistence(post);
+      if(logInStatus){
+        this.router.navigateByUrl("/shoppingList");
+      }else{
+        alert("Login id and password mismatch");
+      }
   	}
 
 }

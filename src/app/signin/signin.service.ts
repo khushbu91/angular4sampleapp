@@ -12,9 +12,9 @@ export class SigninService{
 			this.existingUsers = JSON.parse(data);
 			for(var i=0;i<this.existingUsers.length;i++){
 				if(this.existingUsers[i].email == user.email && this.existingUsers[i].password == user.password){
-					console.log("success");
+					return this.checkAuth(true);
 				}else{
-					console.log("Doesn't Exist");
+					return this.checkAuth(false);
 				}
 			}
 		}
@@ -22,5 +22,9 @@ export class SigninService{
 	
 	getUserData(){
 		 return localStorage.getItem('users');
+	}
+
+	checkAuth(logInSuccess){
+		return logInSuccess;
 	}
 }

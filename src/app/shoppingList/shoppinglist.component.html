@@ -1,0 +1,26 @@
+<div class="container  mt-50">
+	<form class="form-inline" [formGroup]="shoppingForm" (ngSubmit)='saveShopppingItem(shoppingForm.value)'>
+		  <div class="form-group mr-2">
+		    <label for="email">Recipie Name</label>
+		   <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" formControlName="name" placeholder="Enter Name">
+		    <div *ngIf="shoppingForm.controls['name'].hasError('required') && !shoppingForm.controls['name'].pristine" class="error-msg">Name is required</div>
+        	
+		  </div>
+		  <div class="form-group mr-2">
+		    <label for="password">Password</label>
+		    <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" formControlName="price" placeholder="Enter price" formControlName="price">
+	          	<div *ngIf="shoppingForm.controls['price'].hasError('required')  && shoppingForm.controls['price'].touched" class="error-msg">password is required.</div>
+        	
+        	</div>	
+  		  <button type="submit" class="btn btn-primary mr-2" [disabled]="!shoppingForm.valid">Add</button>
+  		  <button type="Clear" class="btn btn-primary mr-2">Clear</button>
+	 </form> 
+	 <div class="card">
+	 	<ul class="list-group">
+		  <li class="list-group-item justify-content-between" *ngFor="let item of shoppingCartItems">
+		    {{item.name}}
+		    <span class="badge badge-default badge-pill">{{item.price}}</span>
+		  </li>
+		</ul>  
+	 </div>
+</div>

@@ -11,10 +11,14 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { SigninComponent } from './signin/signin.component';
+import { ShoppingListComponent } from './shoppingList/shoppinglist.component';
 import {User} from './user'
+
+import {ShoppingItem} from './shoppingItem'
 
 import { SigninService } from './signin/signin.service';
 import { SignupService } from './signup/signup.service';
+import { ShoppingListService } from './shoppingList/shoppinglist.service';
 
 @NgModule({
   imports: [
@@ -26,10 +30,11 @@ import { SignupService } from './signup/signup.service';
     AppComponent,
     HeaderComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    ShoppingListComponent
 
   ],
-  providers: [SigninService,SignupService],
+  providers: [SigninService,SignupService,ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
