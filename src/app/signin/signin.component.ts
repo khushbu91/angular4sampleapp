@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {FormsModule,FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import {SigninService} from './signin.service';
@@ -12,7 +12,6 @@ export class SigninComponent implements OnInit {
 	post :any;
 	email: string ='';
 	password:string ='';
-
   	constructor(private fb: FormBuilder,private service:SigninService, private router : Router) {
   		this.rForm = fb.group({
   			'email' :[null,Validators.required],
