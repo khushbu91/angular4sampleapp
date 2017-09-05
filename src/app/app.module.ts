@@ -12,6 +12,9 @@ import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { SigninComponent } from './signin/signin.component';
 import { ShoppingListComponent } from './shoppingList/shoppinglist.component';
+import { RecipeComponent } from './recipes/recipe.component';
+import { RecipeListComponent } from './recipes/recipelist.component';
+import { AddRecipeComponent } from './recipes/addrecipe.component';
 import {User} from './user'
 
 import {ShoppingItem} from './shoppingItem'
@@ -32,8 +35,10 @@ import { CookieService } from 'ngx-cookie-service';
     HeaderComponent,
     SignupComponent,
     SigninComponent,
-    ShoppingListComponent
-
+    ShoppingListComponent,
+    RecipeComponent,
+    RecipeListComponent,
+    AddRecipeComponent
   ],
   providers: [SigninService,SignupService,ShoppingListService,CookieService],
   bootstrap: [AppComponent]

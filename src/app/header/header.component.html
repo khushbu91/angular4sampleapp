@@ -7,6 +7,9 @@
          <li *ngIf="isUserLoggedIn == 'true'" class="nav-item active">
           <a class="nav-link"  routerLink="/shoppingList">ShoppingList</a>
         </li>
+         <li *ngIf="isUserLoggedIn == 'true'" class="nav-item active">
+          <a class="nav-link"  routerLink="/recipes">Recipes</a>
+        </li>
       </ul>
       <ul class="navbar-nav">
         <li *ngIf="isUserLoggedIn == 'false'" class="nav-item active">
