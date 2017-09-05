@@ -19,6 +19,7 @@ import {ShoppingItem} from './shoppingItem'
 import { SigninService } from './signin/signin.service';
 import { SignupService } from './signup/signup.service';
 import { ShoppingListService } from './shoppingList/shoppinglist.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   imports: [
@@ -34,7 +35,7 @@ import { ShoppingListService } from './shoppingList/shoppinglist.service';
     ShoppingListComponent
 
   ],
-  providers: [SigninService,SignupService,ShoppingListService],
+  providers: [SigninService,SignupService,ShoppingListService,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
