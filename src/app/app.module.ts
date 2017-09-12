@@ -24,6 +24,8 @@ import { SignupService } from './signup/signup.service';
 import { ShoppingListService } from './shoppingList/shoppinglist.service';
 import { CookieService } from 'ngx-cookie-service';
 
+import {ImageUrlValidator} from './shared/imageurlvalidator.directive';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { CookieService } from 'ngx-cookie-service';
     ShoppingListComponent,
     RecipeComponent,
     RecipeListComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
+    ImageUrlValidator
   ],
   providers: [SigninService,SignupService,ShoppingListService,CookieService],
   bootstrap: [AppComponent]

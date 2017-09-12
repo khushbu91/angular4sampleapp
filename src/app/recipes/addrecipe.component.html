@@ -1,3 +1,16 @@
-<div>
-	Add New
-</div>
+<form [formGroup]="recipeForm" (ngSubmit)="addRecipe(recipeForm.value)">
+	<div class="form-group">
+		<label>Name</label>
+		<input type="text" formControlName="name" class="form-control">
+	</div>
+	<div class="form-group">
+		<label>Image Url</label>
+		<input type="file" formControlName="imageUrl" class="form-control" validateImage>
+		<div *ngIf="!isValidUrl">InvalidUrl</div>
+	</div>
+	<div class="form-group">
+		<label>Description</label>
+		<textarea formControlName="description" class="form-control"></textarea>
+	</div>
+	<button type="submit" class="btn btn-primary" [disabled]="recipeForm.invalid">Save</button>
+</form>
