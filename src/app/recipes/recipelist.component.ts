@@ -1,4 +1,4 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,OnInit,Input,EventEmitter,Output} from '@angular/core';
 
 @Component({
 	selector : "app-recipelist",
@@ -6,7 +6,10 @@ import {Component,OnInit} from '@angular/core';
 })
 
 export class RecipeListComponent implements OnInit{
+	@Input('allRecipes') 
+	recipes : Array<String>;
+	recipeSaved= true;
 	ngOnInit(){
-		
+	
 	}
 }

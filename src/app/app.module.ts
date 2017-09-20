@@ -23,6 +23,7 @@ import { SigninService } from './signin/signin.service';
 import { SignupService } from './signup/signup.service';
 import { ShoppingListService } from './shoppingList/shoppinglist.service';
 import { CookieService } from 'ngx-cookie-service';
+import { RecipesService } from './recipes/recipes.service';
 
 import {ImageUrlValidator} from './shared/imageurlvalidator.directive';
 
@@ -42,8 +43,9 @@ import {ImageUrlValidator} from './shared/imageurlvalidator.directive';
     RecipeListComponent,
     AddRecipeComponent,
     ImageUrlValidator
+    
   ],
-  providers: [SigninService,SignupService,ShoppingListService,CookieService],
+  providers: [SigninService,SignupService,ShoppingListService,CookieService,RecipesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

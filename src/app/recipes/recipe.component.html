@@ -1,13 +1,13 @@
 <div class="container">
 	<div class="row">
-		<button type="button" class="btn btn-primary">New Recipe</button>
+		<button type="button" class="btn btn-primary" (click)="newRecipe()">New Recipe</button>
 	</div>
 	<div class="row">
 		<div class="col">
-			<app-recipelist></app-recipelist>
+			<app-recipelist  [allRecipes]="recipes"></app-recipelist>
 		</div>
 		<div class="col">
-			<app-addrecipe></app-addrecipe>
+			<app-addrecipe *ngIf="recipeSaved" (recipes)="getData($event)"  (savedRecipe)="savedRecipe($event)"></app-addrecipe>
 		</div>
 	</div>	
 </div>
