@@ -4,10 +4,16 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<app-recipelist  [allRecipes]="recipes"></app-recipelist>
+			<app-recipelist  [allRecipes]="recipes" (showDetail)="showDetailView($event)"></app-recipelist>
 		</div>
 		<div class="col">
-			<app-addrecipe *ngIf="recipeSaved" (recipes)="getData($event)"  (savedRecipe)="savedRecipe($event)"></app-addrecipe>
+			<div class="row">
+				<div class="col" *ngIf="recipeSaved" >
+					<app-addrecipe (recipes)="getData($event)"(savedRecipe)="savedRecipe($event)"></app-addrecipe></div>
+				<div class="col"  *ngIf="showDetail">
+					<app-recipedetail [recipeDetail]="recipeDetail"></app-recipedetail>
+				</div>
+			</div>
 		</div>
 	</div>	
 </div>

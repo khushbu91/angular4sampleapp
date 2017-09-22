@@ -26,6 +26,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { RecipesService } from './recipes/recipes.service';
 
 import {ImageUrlValidator} from './shared/imageurlvalidator.directive';
+import { RecipedetailComponent } from './recipedetail/recipedetail.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import {ImageUrlValidator} from './shared/imageurlvalidator.directive';
     RecipeComponent,
     RecipeListComponent,
     AddRecipeComponent,
-    ImageUrlValidator
+    ImageUrlValidator,
+    RecipedetailComponent
     
   ],
   providers: [SigninService,SignupService,ShoppingListService,CookieService,RecipesService],
