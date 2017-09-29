@@ -34,7 +34,6 @@ export class AddRecipeComponent implements OnInit{
 
 
 	}
-
 	checkValid($event){
 		this.isValid =$event.isCheck;
 	}

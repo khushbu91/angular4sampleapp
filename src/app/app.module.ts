@@ -5,6 +5,7 @@ import { AppRoutingModule }  from './app-routing.module';
 
 
 import {ReactiveFormsModule} from '@angular/forms';
+import { SimpleDropdownModule } from 'ng2-simple-dropdown';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { ShoppingListComponent } from './shoppingList/shoppinglist.component';
 import { RecipeComponent } from './recipes/recipe.component';
 import { RecipeListComponent } from './recipes/recipelist.component';
 import { AddRecipeComponent } from './recipes/addrecipe.component';
+
 import {User} from './user'
 
 import {ShoppingItem} from './shoppingItem'
@@ -27,12 +29,14 @@ import { RecipesService } from './recipes/recipes.service';
 
 import {ImageUrlValidator} from './shared/imageurlvalidator.directive';
 import { RecipedetailComponent } from './recipedetail/recipedetail.component';
+import {NgbModal,NgbModule,NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalContent} from './modal/modal.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,NgbModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -44,10 +48,14 @@ import { RecipedetailComponent } from './recipedetail/recipedetail.component';
     RecipeListComponent,
     AddRecipeComponent,
     ImageUrlValidator,
-    RecipedetailComponent
+    RecipedetailComponent,
+    NgbdModalContent
+    
     
   ],
-  providers: [SigninService,SignupService,ShoppingListService,CookieService,RecipesService],
+  entryComponents: [NgbdModalContent],
+  providers: [SigninService,SignupService,ShoppingListService,
+  CookieService,RecipesService,NgbModal,NgbActiveModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
