@@ -24,5 +24,19 @@
 		</ul>  
 	 </div>
 </div>
-<ngbd-modal-content #modal></ngbd-modal-content>
+<ngbd-modal-content #modal class="modal"></ngbd-modal-content>
 <button class="btn btn-lg btn-outline-primary" (click)="openModal()">Launch demo modal</button>
+
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle [ngClass]="{'disabled': dropdownDisabled}" 
+      >Toggle dropdown</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button class="dropdown-item">Action - 1</button>
+        <button class="dropdown-item">Another Action</button>
+        <button class="dropdown-item">Something else is here</button>
+      </div>
+    </div>
+  </div>
+

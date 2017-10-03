@@ -14,6 +14,7 @@ import {NgbdModalContent} from './../modal/modal.component';
 export class ShoppingListComponent implements OnInit{
 	@ViewChild(NgbdModalContent) modal;
 	shoppingForm : FormGroup;
+	dropdownDisabled : Boolean= true;
 	name: string='';
 	price:number;
 	item :any;
